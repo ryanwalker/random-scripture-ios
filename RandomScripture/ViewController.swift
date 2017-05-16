@@ -13,12 +13,16 @@ class ViewController: UIViewController {
     @IBOutlet var scriptureLabel: UILabel!
     
     @IBOutlet var theView: UIView!
-    let randomScriptures = ["random 1", "random 2", "random 3", "random 4", "random 5"]
+    let randomScriptures = ["And it came to pass ... 1",
+                            "that I nephi ... 2",
+                            "said unto my father ... 3",
+                            "I will go ... 4",
+                            "and do ... 5"]
 
     let swipeRightRecognizer = UISwipeGestureRecognizer()
     let swipeLeftRecognizer = UISwipeGestureRecognizer()
     
-    var index = 0;
+    var index = -1;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +42,11 @@ class ViewController: UIViewController {
     func swiped(gesture: UISwipeGestureRecognizer) {
         switch gesture.direction {
         case UISwipeGestureRecognizerDirection.right:
-            print("Right...")
             prevScrip()
         case UISwipeGestureRecognizerDirection.left:
             nextScrip()
-            print("Left...")
-        default:
-            print("Who cares...")
+        default: break
         }
-        print("Swiped i guess")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
         } else {
             index += 1
         }
+        scriptureLabel.swipeAnimation(transitionType: kCATransitionFromRight)
         scriptureLabel.text = randomScriptures[index]
     }
     
@@ -69,24 +70,27 @@ class ViewController: UIViewController {
         } else {
             index -= 1
         }
+        scriptureLabel.swipeAnimation(transitionType: kCATransitionFromLeft)
         scriptureLabel.text = randomScriptures[index]
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
-        print("refresh")
+
+}
+
+extension UIView {
+    
+    func swipeAnimation(transitionType: String) {
+        let swipeTransition = CATransition()
+        
+        swipeTransition.type = kCATransitionPush
+        swipeTransition.subtype = transitionType
+        swipeTransition.duration = 0.5
+        swipeTransition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        swipeTransition.fillMode = kCAFillModeRemoved
+        
+        self.layer.add(swipeTransition, forKey: "swipeTransition")
+        
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
-        
-    }
 }
 
