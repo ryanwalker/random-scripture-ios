@@ -13,6 +13,7 @@
 		F545948B1EBE5DA30052FD9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54594891EBE5DA30052FD9A /* Main.storyboard */; };
 		F545948D1EBE5DA30052FD9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F545948C1EBE5DA30052FD9A /* Assets.xcassets */; };
 		F54594901EBE5DA30052FD9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F545948E1EBE5DA30052FD9A /* LaunchScreen.storyboard */; };
+		F5582C1B1ECF9F6800A94281 /* Scripture.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5582C1A1ECF9F6800A94281 /* Scripture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		F545948C1EBE5DA30052FD9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F545948F1EBE5DA30052FD9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F54594911EBE5DA30052FD9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5582C1A1ECF9F6800A94281 /* Scripture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scripture.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				F545948C1EBE5DA30052FD9A /* Assets.xcassets */,
 				F545948E1EBE5DA30052FD9A /* LaunchScreen.storyboard */,
 				F54594911EBE5DA30052FD9A /* Info.plist */,
+				F5582C1A1ECF9F6800A94281 /* Scripture.swift */,
 			);
 			path = RandomScripture;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			files = (
 				F54594881EBE5DA30052FD9A /* ViewController.swift in Sources */,
 				F54594861EBE5DA30052FD9A /* AppDelegate.swift in Sources */,
+				F5582C1B1ECF9F6800A94281 /* Scripture.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +344,7 @@
 				DEVELOPMENT_TEAM = AEL9Z6F99W;
 				INFOPLIST_FILE = RandomScripture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.ryanwalker.RandomScripture;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vayle.dip-debug";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -354,7 +358,7 @@
 				DEVELOPMENT_TEAM = AEL9Z6F99W;
 				INFOPLIST_FILE = RandomScripture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.ryanwalker.RandomScripture;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vayle.dip-release";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

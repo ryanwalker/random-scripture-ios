@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,11 +25,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vd4-CG-SdK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqP-Ff-aJk">
-                                        <rect key="frame" x="8" y="108" width="359" height="386"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scripture Reference" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZt-L6-Nam">
+                                        <rect key="frame" x="8" y="8" width="359" height="101"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="386" id="lar-53-tL2"/>
+                                            <constraint firstAttribute="height" constant="101" id="UOB-0E-9tQ"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scripture" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khc-YD-pnE">
+                                        <rect key="frame" x="8" y="117" width="359" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,12 +43,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mqP-Ff-aJk" secondAttribute="trailing" constant="8" id="1Lj-nG-1dg"/>
-                                    <constraint firstItem="mqP-Ff-aJk" firstAttribute="top" secondItem="vd4-CG-SdK" secondAttribute="top" constant="108" id="8Wy-eT-TMw"/>
-                                    <constraint firstItem="mqP-Ff-aJk" firstAttribute="leading" secondItem="vd4-CG-SdK" secondAttribute="leading" constant="8" id="Jas-F0-CIf"/>
-                                    <constraint firstItem="mqP-Ff-aJk" firstAttribute="leading" secondItem="vd4-CG-SdK" secondAttribute="leading" constant="8" id="Yed-xc-S35"/>
-                                    <constraint firstAttribute="trailing" secondItem="mqP-Ff-aJk" secondAttribute="trailing" constant="8" id="avd-nE-3Mr"/>
-                                    <constraint firstItem="mqP-Ff-aJk" firstAttribute="top" secondItem="vd4-CG-SdK" secondAttribute="top" constant="108" id="mV5-g5-hGL"/>
+                                    <constraint firstItem="Khc-YD-pnE" firstAttribute="leading" secondItem="vd4-CG-SdK" secondAttribute="leading" constant="8" id="3V0-ZC-YzT"/>
+                                    <constraint firstItem="JZt-L6-Nam" firstAttribute="leading" secondItem="vd4-CG-SdK" secondAttribute="leading" constant="8" id="FI2-ZM-Hph"/>
+                                    <constraint firstItem="JZt-L6-Nam" firstAttribute="trailing" secondItem="Khc-YD-pnE" secondAttribute="trailing" id="NE9-7e-abU"/>
+                                    <constraint firstAttribute="trailing" secondItem="JZt-L6-Nam" secondAttribute="trailing" constant="8" id="PqL-gH-AxP"/>
+                                    <constraint firstItem="JZt-L6-Nam" firstAttribute="leading" secondItem="Khc-YD-pnE" secondAttribute="leading" id="Z96-3n-5xZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Khc-YD-pnE" secondAttribute="trailing" constant="8" id="pC6-gk-GGA"/>
+                                    <constraint firstItem="JZt-L6-Nam" firstAttribute="top" secondItem="vd4-CG-SdK" secondAttribute="topMargin" id="rU7-yq-ktE"/>
+                                    <constraint firstItem="Khc-YD-pnE" firstAttribute="top" secondItem="JZt-L6-Nam" secondAttribute="bottom" constant="8" symbolic="YES" id="x0p-k2-pLf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -54,8 +63,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="scriptureLabel" destination="mqP-Ff-aJk" id="jaX-R6-gKi"/>
-                        <outlet property="theView" destination="vd4-CG-SdK" id="iwb-2M-lNv"/>
+                        <outlet property="scriptureLabel" destination="Khc-YD-pnE" id="BT4-8o-7if"/>
+                        <outlet property="scriptureReference" destination="JZt-L6-Nam" id="QTN-jB-7XV"/>
+                        <outlet property="theView" destination="vd4-CG-SdK" id="xnT-WI-qVF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aN4-VS-aVw" userLabel="First Responder" sceneMemberID="firstResponder"/>
